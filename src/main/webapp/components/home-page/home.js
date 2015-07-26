@@ -3,7 +3,9 @@ define(["jquery", "knockout", "text!./home.html", "dataprovider"], function($, k
     var postUrl = "/app/#post/",
         color = "color",
         editClass = "glyphicon-pencil",
-        trashClass = "glyphicon-trash";
+        trashClass = "glyphicon-trash",
+        // Local string not implemented.
+        newTitle = "New Post"; 
 
 // model for single post on home page.
     function Post(data) {
@@ -61,7 +63,7 @@ define(["jquery", "knockout", "text!./home.html", "dataprovider"], function($, k
                     return new Post(item)
                 });
                 mappedPosts.unshift(new Post({
-                    title: "New Post",
+                    title: newTitle,
                     isNew: true
                 }))
                 self.posts(mappedPosts);

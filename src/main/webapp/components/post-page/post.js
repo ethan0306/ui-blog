@@ -1,3 +1,4 @@
+// View model for new post or edit post page
 define(["knockout", "text!./post.html", "dataprovider"], function(ko, postTemplate, dataprovider) {
 
   function PostViewModel(route) {
@@ -15,6 +16,7 @@ define(["knockout", "text!./post.html", "dataprovider"], function(ko, postTempla
         });
     };
 
+   // if it is not new post(have id in url), we get post data.
     if (!self.isNew) {
       dataprovider.getPost(
         self.id,
@@ -25,6 +27,7 @@ define(["knockout", "text!./post.html", "dataprovider"], function(ko, postTempla
         });
     }
 
+  // Customized binding for editable div. We display it as textarea and save the original html
     ko.bindingHandlers.editableText = {
       init: function(element, valueAccessor) {
         $(element).on('blur', function() {
