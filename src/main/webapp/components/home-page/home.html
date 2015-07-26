@@ -1,0 +1,15 @@
+<ul class="postsList" data-bind="foreach: posts">
+    <li class = "col-md-4" data-bind="css: {isNew : isNew, isReadMode : isReadMode}" >
+    	<div class="postcard" data-bind="click: $parent.clickPost" >
+        <div class="textContent" data-bind="html: text, css: css" /> 
+        <div class="title" data-bind="text: title" /> 
+    	<div class="time" data-bind="text: time" /> 
+         <a  class="btn-xs btn-default">
+             <i class="glyphicon glyphicon-pencil"></i>
+        </a>
+        <a  class="btn-xs btn-default">
+             <i class="glyphicon glyphicon-trash"></i>
+        </a>
+    </div>
+    </li> 
+</ul>

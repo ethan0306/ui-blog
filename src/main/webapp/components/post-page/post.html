@@ -1,0 +1,20 @@
+<!-- ko if: isNew -->
+<h2>New Post</h2>
+ <!-- /ko -->
+
+ <!-- ko ifnot: isNew -->
+<h2>Edit Post</h2>
+ <!-- /ko -->
+
+<form data-bind="submit: publish">
+<div> 
+	<span> Title: </span>  
+	<input placeholder="Input the title" data-bind="value: title" maxlength="30" size="50" required/>
+<div>
+
+<div> 
+	<span> Text: </span>  
+	<div id="textarea" contenteditable spellcheck="true" data-bind="editableText: text"/>
+<div>	
+<input class="submit btn-sm btn-primary" type="submit" value="Publish Post">
+</form>
